@@ -1,0 +1,14 @@
+.footer {
+  max-width: 668px;
+  margin: 0 auto;
+  padding: 60px 0;
+  display:flex;
+  justify-content: center;
+}
+.date {
+margin-left: 3px;
+}
+
+.spots {
+  margin-right: 3px;
+}
