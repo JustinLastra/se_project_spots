@@ -7,6 +7,8 @@
   margin-right: 20px;
   height: 190px;
   width: 190px;
+  border-radius: 8px
+  object-fit: cover;
 }
 
 .profile__column {
@@ -36,6 +38,8 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 420px;
+  font-weight: 500;
+  opacity: 0.7;
 }
 
 .profile__edit-btn {
@@ -44,10 +48,15 @@
   border: none;
   padding: 0;
   display: flex;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 16px;
   color: #212121;
-  
+  cursor: pointer;
+  gap: 8px;
+
+}
+.profile__edit-btn:hover {
+  color: #ff6f20;
 }
 .profile__add-btn {
   margin-left: auto;
@@ -57,6 +66,9 @@
   margin-top: auto;
   font-weight: 500;
   gap: 8px;
+}
+.profile__add-btn:hover {
+  color: #ff6f20;
 }
 
 @media screen and (max-width: 627px) {
