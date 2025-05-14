@@ -1,14 +1,14 @@
 .footer {
-  max-width: 668px;
   margin: 0 auto;
   padding: 60px 0;
   display:flex;
   justify-content: center;
 }
-.date {
-margin-left: 3px;
-}
-
-.spots {
-  margin-right: 3px;
+.footer__copywrite {
+  font-size: 14px;
+  line-height: 120%;
+  color: #212121;
+  font-weight: 400;
+  margin: o;
+  opacity: 70%;
 }
