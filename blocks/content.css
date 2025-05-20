@@ -8,3 +8,9 @@
     padding: 0 105px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .content {
+    padding: 0 16px;
+  }
+}
