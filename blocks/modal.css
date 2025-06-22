@@ -9,9 +9,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 .modal_is-open {
   visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal__container {
@@ -22,6 +27,12 @@
   padding: 32px 50px;
   position: relative;
   box-sizing: border-box;
+  transform: translateY(-40px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal_is-open .modal__container {
+  transform: translateY(0);
 }
 
 .modal__close-btn {
