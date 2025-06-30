@@ -48,3 +48,11 @@ function handleEditProfileSubmit(event) {
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
+
+const newPostForm = document.querySelector("#new-post-modal .modal__form");
+const newPostInput = document.querySelector("#card-image-input");
+
+newPostForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  console.log(newPostInput.value);
+});
