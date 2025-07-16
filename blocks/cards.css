@@ -2,7 +2,7 @@
   list-style-type: none;
   padding: 20px 0 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(413px, 1fr));
+  grid-template-columns: repeat(auto-fit, 413px);
   gap: 40px 20px;
   grid-auto-rows: auto;
   width: 100%;
@@ -13,11 +13,6 @@
   justify-content: center;
 }
 
-@media screen and (min-width: 628px) and (max-width: 885px) {
-  .cards__list {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-}
 @media screen and (max-width: 627px) {
   .cards__list {
     grid-template-columns: repeat(auto-fit, 288px);
