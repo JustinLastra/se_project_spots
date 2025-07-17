@@ -55,5 +55,5 @@ const newPostInput = document.querySelector("#card-image-input");
 newPostForm.addEventListener("submit", function (event) {
   event.preventDefault();
   console.log(newPostInput.value);
-  console.log("newPostForm.value");
+  console.log(newPostForm.value);
 });
