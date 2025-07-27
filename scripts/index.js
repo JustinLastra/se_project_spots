@@ -47,22 +47,33 @@ const profileDescriptionElement = document.querySelector(
   ".profile__description"
 );
 
+function openModal(modal) {
+  modal.classList.add("modal_is-open");
+}
+function closeModal(modal) {
+  modal.classList.remove("modal_is-open");
+}
+
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameElement.textContent;
   editProfileDescriptionInput.value = profileDescriptionElement.textContent;
   editProfileModal.classList.add("modal_is-open");
+  openModal(editProfileModal);
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
   editProfileModal.classList.remove("modal_is-open");
+  closeModal(editProfileModal);
 });
 
 newPostBtn.addEventListener("click", function () {
   newPostModal.classList.add("modal_is-open");
+  openModal(newPostModal);
 });
 
 newPostCloseBtn.addEventListener("click", function () {
   newPostModal.classList.remove("modal_is-open");
+  closeModal(newPostModal);
 });
 
 function handleEditProfileSubmit(event) {
