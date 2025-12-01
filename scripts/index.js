@@ -59,7 +59,8 @@ const cardTemplate = document
   .content.querySelector(".card");
 const cardsList = document.querySelector(".cards__list");
 
-function getCardElement(data) { // {name: "Grand Canyon", link: http://slkdjfsl}
+function getCardElement(data) {
+  // {name: "Grand Canyon", link: http://slkdjfsl}
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
@@ -76,7 +77,6 @@ function getCardElement(data) { // {name: "Grand Canyon", link: http://slkdjfsl}
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-button");
   cardDeleteBtnEl.addEventListener("click", function () {
     cardElement.remove();
-    cardElement = null;
   });
 
   cardImageEl.addEventListener("click", function () {
@@ -129,7 +129,6 @@ function handleEditProfileSubmit(event) {
   editProfileModal.classList.remove("modal_is-open");
 }
 
-
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 const imageDescriptionInput = document.querySelector("#card-description-input");
@@ -148,6 +147,7 @@ newPostForm.addEventListener("submit", function (event) {
     link: imageLinkInput.value,
   });
   cardsList.prepend(cardElement);
+  newPostForm.reset();
 });
 
 initialCards.forEach(function (item) {
