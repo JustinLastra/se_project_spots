@@ -90,6 +90,9 @@ function getCardElement(data) {
 }
 
 function openModal(modal) {
+  const formEl = modal.querySelector(".modal__form");
+
+  resetValidation(formEl);
   modal.classList.add("modal_is-open");
 }
 function closeModal(modal) {
@@ -105,6 +108,7 @@ editProfileBtn.addEventListener("click", function () {
 
 editProfileCloseBtn.addEventListener("click", function () {
   editProfileModal.classList.remove("modal_is-open");
+  editProfileForm.reset();
   closeModal(editProfileModal);
 });
 
@@ -115,6 +119,7 @@ newPostBtn.addEventListener("click", function () {
 
 newPostCloseBtn.addEventListener("click", function () {
   newPostModal.classList.remove("modal_is-open");
+  newPostForm.reset(); // <-- Add this line
   closeModal(newPostModal);
 });
 
