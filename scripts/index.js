@@ -92,7 +92,9 @@ function getCardElement(data) {
 function openModal(modal) {
   const formEl = modal.querySelector(".modal__form");
 
-  resetValidation(formEl);
+  if (formEl) {
+    resetValidation(formEl);
+  }
   modal.classList.add("modal_is-open");
 }
 function closeModal(modal) {
