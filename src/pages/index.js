@@ -1,3 +1,13 @@
+import "./index.css";
+import { enableValidation, settings } from "../scripts/validation.js";
+
+// Import images so webpack can process them
+import Logo from "../images/Logo.svg";
+import avatar from "../images/avatar.jpg";
+import Pencil from "../images/Pencil.svg";
+import plusIcon from "../images/plus-icon.svg";
+import closeIcon from "../images/Group-27.png";
+
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -182,4 +192,15 @@ previewModalCloseBtn.addEventListener("click", function () {
 const modals = document.querySelectorAll(".modal");
 modals.forEach((modal) => {
   modal.addEventListener("click", handleOverlayClick);
+});
+
+enableValidation(settings);
+
+// Set image sources from imported assets
+document.querySelector(".header__logo").src = Logo;
+document.querySelector(".profile__avatar").src = avatar;
+document.querySelector(".profile__edit-btn img").src = Pencil;
+document.querySelector(".profile__add-btn img").src = plusIcon;
+document.querySelectorAll(".modal__close-btn img").forEach((img) => {
+  img.src = closeIcon;
 });
