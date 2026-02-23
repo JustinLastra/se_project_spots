@@ -59,7 +59,7 @@ const setEventListeners = (formEl, config) => {
   });
 };
 
-const resetValidation = (formEl) => {
+export const resetValidation = (formEl) => {
   const inputList = formEl.querySelectorAll(settings.inputSelector);
   inputList.forEach((inputEl) => {
     hideInputError(formEl, inputEl);
