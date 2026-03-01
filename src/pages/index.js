@@ -3,9 +3,16 @@ import {
   enableValidation,
   settings,
   resetValidation,
+  toggleButtonState,
 } from "../scripts/validation.js";
 
 // Import images so webpack can process them
+function disableSubmitAfterReset(formEl) {
+  const inputList = formEl.querySelectorAll(settings.inputSelector);
+  const buttonEl = formEl.querySelector(settings.submitButtonSelector);
+  toggleButtonState(inputList, buttonEl);
+}
+
 import Logo from "../images/Logo.svg";
 import avatar from "../images/avatar.jpg";
 import Pencil from "../images/Pencil.svg";
@@ -219,35 +226,32 @@ function handleOverlayClick(evt) {
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameElement.textContent;
   editProfileDescriptionInput.value = profileDescriptionElement.textContent;
-  editProfileModal.classList.add("modal_is-open");
   openModal(editProfileModal);
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-open");
   editProfileForm.reset();
+  disableSubmitAfterReset(editProfileForm);
   closeModal(editProfileModal);
 });
 
 editAvatarBtn.addEventListener("click", function () {
-  editAvatarModal.classList.add("modal_is-open");
   openModal(editAvatarModal);
 });
 
 editAvatarCloseBtn.addEventListener("click", function () {
-  editAvatarModal.classList.remove("modal_is-open");
   editAvatarForm.reset();
+  disableSubmitAfterReset(editAvatarForm);
   closeModal(editAvatarModal);
 });
 
 newPostBtn.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-open");
   openModal(newPostModal);
 });
 
 newPostCloseBtn.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-open");
-  newPostForm.reset(); // <-- Add this line
+  newPostForm.reset();
+  disableSubmitAfterReset(newPostForm);
   closeModal(newPostModal);
 });
 
@@ -274,6 +278,7 @@ function handleEditProfileSubmit(event) {
       closeModal(editProfileModal);
     })
     .catch(console.error)
+      disableSubmitAfterReset(newPostForm);
     .finally(() => setButtonText(editProfileSubmitBtn, defaultText));
 }
 
