@@ -230,8 +230,6 @@ editProfileBtn.addEventListener("click", function () {
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
-  editProfileForm.reset();
-  disableSubmitAfterReset(editProfileForm);
   closeModal(editProfileModal);
 });
 
@@ -240,8 +238,6 @@ editAvatarBtn.addEventListener("click", function () {
 });
 
 editAvatarCloseBtn.addEventListener("click", function () {
-  editAvatarForm.reset();
-  disableSubmitAfterReset(editAvatarForm);
   closeModal(editAvatarModal);
 });
 
@@ -250,8 +246,6 @@ newPostBtn.addEventListener("click", function () {
 });
 
 newPostCloseBtn.addEventListener("click", function () {
-  newPostForm.reset();
-  disableSubmitAfterReset(newPostForm);
   closeModal(newPostModal);
 });
 
@@ -275,10 +269,11 @@ function handleEditProfileSubmit(event) {
     .then((data) => {
       profileNameElement.textContent = data.name;
       profileDescriptionElement.textContent = data.about;
+      editProfileForm.reset();
+      disableSubmitAfterReset(editProfileForm);
       closeModal(editProfileModal);
     })
     .catch(console.error)
-      disableSubmitAfterReset(newPostForm);
     .finally(() => setButtonText(editProfileSubmitBtn, defaultText));
 }
 
@@ -295,6 +290,7 @@ function handleEditAvatarSubmit(event) {
       profileAvatarElement.alt = "avatar";
       closeModal(editAvatarModal);
       editAvatarForm.reset();
+      disableSubmitAfterReset(editAvatarForm);
     })
     .catch(console.error)
     .finally(() => setButtonText(editAvatarSubmitBtn, defaultText));
@@ -320,6 +316,7 @@ newPostForm.addEventListener("submit", function (event) {
       cardsList.prepend(cardElement);
       closeModal(newPostModal);
       newPostForm.reset();
+      disableSubmitAfterReset(newPostForm);
     })
     .catch(console.error)
     .finally(() => setButtonText(newPostSubmitBtn, defaultText));
