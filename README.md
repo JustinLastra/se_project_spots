@@ -27,8 +27,4 @@ This Webpage is deployed to Github pages
 
 -Deployment Link: https://justinlastra.github.io/se_project_spots/
 
--Video: https://www.loom.com/share/d43ad48963de47c4835eec8924caf4d9
-
-## Project Pitch Video
-
-Check out [this video](https://www.loom.com/share/d43ad48963de47c4835eec8924caf4d9), where I describe my project and some challenges I faced while building it.
+-Video: https://www.loom.com/share/a84ac544309344dfb8942a1f99f4880e?sid=183a9954-8f62-41b9-88bf-6040d20c8ae0
