@@ -5,20 +5,18 @@ import {
   resetValidation,
   toggleButtonState,
 } from "../scripts/validation.js";
-
-// Import images so webpack can process them
-function disableSubmitAfterReset(formEl) {
-  const inputList = formEl.querySelectorAll(settings.inputSelector);
-  const buttonEl = formEl.querySelector(settings.submitButtonSelector);
-  toggleButtonState(inputList, buttonEl);
-}
-
 import Logo from "../images/Logo.svg";
 import avatar from "../images/avatar.jpg";
 import Pencil from "../images/Pencil.svg";
 import plusIcon from "../images/plus-icon.svg";
 import closeIcon from "../images/Group-27.png";
 import Api from "../scripts/utils/Api.js";
+
+function disableSubmitAfterReset(formEl) {
+  const inputList = formEl.querySelectorAll(settings.inputSelector);
+  const buttonEl = formEl.querySelector(settings.submitButtonSelector);
+  toggleButtonState(inputList, buttonEl);
+}
 
 // const initialCards = [
 //   {
